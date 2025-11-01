@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 25% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 28 45% 45%;
+    --primary-foreground: 30 25% 97%;
+
+    --secondary: 30 20% 92%;
+    --secondary-foreground: 30 10% 15%;
+
+    --muted: 30 20% 92%;
+    --muted-foreground: 30 8% 50%;
+
+    --accent: 28 40% 55%;
+    --accent-foreground: 30 25% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 30 25% 97%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 28 45% 45%;
+
+    --radius: 0.75rem;
+    
+    --walnut: 28 45% 35%;
+    --cream: 30 35% 95%;
+    --beige: 30 20% 92%;
+    
+    --gradient-elegant: linear-gradient(135deg, hsl(30 25% 97%) 0%, hsl(30 20% 92%) 100%);
+    --shadow-soft: 0 4px 20px -2px hsl(28 45% 45% / 0.08);
+    --shadow-hover: 0 8px 30px -4px hsl(28 45% 45% / 0.12);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 10% 10%;
+    --foreground: 30 25% 95%;
+
+    --card: 30 10% 12%;
+    --card-foreground: 30 25% 95%;
+
+    --popover: 30 10% 12%;
+    --popover-foreground: 30 25% 95%;
+
+    --primary: 28 45% 55%;
+    --primary-foreground: 30 10% 10%;
+
+    --secondary: 30 8% 18%;
+    --secondary-foreground: 30 25% 95%;
+
+    --muted: 30 8% 18%;
+    --muted-foreground: 30 10% 65%;
+
+    --accent: 28 40% 45%;
+    --accent-foreground: 30 25% 95%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 30 25% 95%;
+
+    --border: 30 8% 22%;
+    --input: 30 8% 22%;
+    --ring: 28 45% 55%;
+    
+    --walnut: 28 45% 45%;
+    --cream: 30 10% 15%;
+    --beige: 30 8% 18%;
+    
+    --gradient-elegant: linear-gradient(135deg, hsl(30 10% 10%) 0%, hsl(30 8% 15%) 100%);
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-accent transition-all duration-300 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-hover)] hover:scale-105 font-medium;
+  }
+  
+  .product-card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[var(--shadow-hover)] hover:-translate-y-1;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 px-6 md:px-12 lg:px-24;
+  }
+}
