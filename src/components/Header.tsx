@@ -11,22 +11,26 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { totalItems } = useCart();
 
- const navLinks = [
-  { path: "/", label: "Home" },
-  { path: "/collections#living-room", label: "Living Room" },
-  { path: "/collections#bedroom", label: "Bedroom" },
-  { path: "/collections#dining", label: "Dining" },
-  { path: "/collections#kitchen", label: "Kitchen" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
-];
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/collections#living-room", label: "Living Room" },
+    { path: "/collections#bedroom", label: "Bedroom" },
+    { path: "/collections#dining", label: "Dining" },
+    { path: "/collections#office", label: "Office" },
+    { path: "/about", label: "About" },
+    { path: "/contact", label: "Contact" },
+  ];
+
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-[var(--shadow-soft)]">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-playfair font-bold text-primary hover:text-accent transition-colors">
+          <Link
+            to="/"
+            className="text-2xl font-playfair font-bold text-primary hover:text-accent transition-colors"
+          >
             S.ADE FURNITURE
           </Link>
 
@@ -45,7 +49,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            
+
             {/* Cart Button */}
             <Button
               variant="outline"
@@ -79,7 +83,7 @@ const Header = () => {
                 </span>
               )}
             </Button>
-            
+
             <button
               className="text-foreground"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -110,11 +114,10 @@ const Header = () => {
           </div>
         )}
       </nav>
-      
+
       <CartDrawer open={isCartOpen} onOpenChange={setIsCartOpen} />
     </header>
   );
 };
 
 export default Header;
-

@@ -25,27 +25,31 @@ import Autoplay from "embla-carousel-autoplay";
 
 const Home = () => {
   const categories = [
-    {
-      icon: Sofa,
-      title: "Living Room",
-      description: "Comfort meets style",
-    },
-    {
-      icon: Bed,
-      title: "Bedroom",
-      description: "Your personal sanctuary",
-    },
-    {
-      icon: Utensils,
-      title: "Dining",
-      description: "Gather in elegance",
-    },
-    {
-      icon: Briefcase,
-      title: "Office",
-      description: "Productive spaces",
-    },
-  ];
+  {
+    icon: Sofa,
+    title: "Living Room",
+    description: "Comfort meets style",
+    link: "/collections#living-room",
+  },
+  {
+    icon: Bed,
+    title: "Bedroom",
+    description: "Your personal sanctuary",
+    link: "/collections#bedroom",
+  },
+  {
+    icon: Utensils,
+    title: "Dining",
+    description: "Gather in elegance",
+    link: "/collections#dining",
+  },
+  {
+    icon: Briefcase,
+    title: "Office",
+    description: "Productive spaces",
+    link: "/collections#office",
+  },
+];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -81,28 +85,27 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Categories Preview */}
-        <section className="section-padding">
-          <div className="container mx-auto">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-12">
-              Explore Our Collections
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {categories.map((category, index) => (
-                <Link
-                  key={index}
-                  to="/collections"
-                  className="group p-8 bg-card rounded-lg border border-border hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1"
-                >
-                  <category.icon className="w-12 h-12 mb-4 text-primary group-hover:text-accent transition-colors" />
-                  <h3 className="text-2xl font-playfair font-semibold mb-2">{category.title}</h3>
-                  <p className="text-muted-foreground">{category.description}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
+{/* Categories Preview */}
+<section className="section-padding">
+  <div className="container mx-auto">
+    <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-12">
+      Explore Our Collections
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {categories.map((category, index) => (
+        <Link
+          key={index}
+          to={category.link}   // ✅ use the link from your array
+          className="group p-8 bg-card rounded-lg border border-border hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1"
+        >
+          <category.icon className="w-12 h-12 mb-4 text-primary group-hover:text-accent transition-colors" />
+          <h3 className="text-2xl font-playfair font-semibold mb-2">{category.title}</h3>
+          <p className="text-muted-foreground">{category.description}</p>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
         {/* Latest Designs */}
         <section className="section-padding bg-background">
           <div className="container mx-auto">

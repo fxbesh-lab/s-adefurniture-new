@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import milano from "@/assets/milano.jpg";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -410,11 +413,24 @@ const Collections = () => {
 
 
 
-  ];
+];
+
+const location = useLocation();
+
+useEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+}, [location]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
+
       
       <main className="flex-1">
         {/* Page Header */}
@@ -481,5 +497,6 @@ const Collections = () => {
     </div>
   );
 };
+
 
 export default Collections;
