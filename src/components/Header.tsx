@@ -11,13 +11,15 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { totalItems } = useCart();
 
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/collections", label: "Collections" },
-    { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
-  ];
-
+ const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/collections#living-room", label: "Living Room" },
+  { path: "/collections#bedroom", label: "Bedroom" },
+  { path: "/collections#dining", label: "Dining" },
+  { path: "/collections#kitchen", label: "Kitchen" },
+  { path: "/about", label: "About" },
+  { path: "/contact", label: "Contact" },
+];
   const isActive = (path: string) => location.pathname === path;
 
   return (

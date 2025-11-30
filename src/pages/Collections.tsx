@@ -427,53 +427,54 @@ const Collections = () => {
           </div>
         </section>
 
-        {/* Living Room Collection */}
-        <section className="section-padding">
-          <div className="container mx-auto">
-            <h2 className="text-4xl font-playfair font-bold mb-8">Living Room Collection</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {livingRoomProducts.map((product, index) => (
-                <ProductCard key={index} {...product} />
-              ))}
-            </div>
-          </div>
-        </section>
+       {/* Living Room Collection */}
+<section id="living-room" className="section-padding">
+  <div className="container mx-auto">
+    <h2 className="text-4xl font-playfair font-bold mb-8">Living Room Collection</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {livingRoomProducts.map((product, index) => (
+        <ProductCard key={index} {...product} />
+      ))}
+    </div>
+  </div>
+</section>
 
-        {/* Bedroom Collection */}
-        <section className="section-padding bg-secondary">
-          <div className="container mx-auto">
-            <h2 className="text-4xl font-playfair font-bold mb-8">Bedroom Collection</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {bedroomProducts.map((product, index) => (
-                <ProductCard key={index} {...product} />
-              ))}
-            </div>
-          </div>
-        </section>
+{/* Bedroom Collection */}
+<section id="bedroom" className="section-padding bg-secondary">
+  <div className="container mx-auto">
+    <h2 className="text-4xl font-playfair font-bold mb-8">Bedroom Collection</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {bedroomProducts.map((product, index) => (
+        <ProductCard key={index} {...product} />
+      ))}
+    </div>
+  </div>
+</section>
 
-        {/* Dining Collection */}
-        <section className="section-padding">
-          <div className="container mx-auto">
-            <h2 className="text-4xl font-playfair font-bold mb-8">Dining Collection</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {diningProducts.map((product, index) => (
-                <ProductCard key={index} {...product} />
-              ))}
-            </div>
-          </div>
-        </section>
+{/* Dining Collection */}
+<section id="dining" className="section-padding">
+  <div className="container mx-auto">
+    <h2 className="text-4xl font-playfair font-bold mb-8">Dining Collection</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {diningProducts.map((product, index) => (
+        <ProductCard key={index} {...product} />
+      ))}
+    </div>
+  </div>
+</section>
 
-        {/*  kitchen Collection */}
-        <section className="section-padding bg-secondary">
-          <div className="container mx-auto">
-            <h2 className="text-4xl font-playfair font-bold mb-8"> kitchen Collection</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              { kitchenProducts.map((product, index) => (
-                <ProductCard key={index} {...product} />
-              ))}
-            </div>
-          </div>
-        </section>
+{/* Kitchen Collection */}
+<section id="kitchen" className="section-padding bg-secondary">
+  <div className="container mx-auto">
+    <h2 className="text-4xl font-playfair font-bold mb-8">Kitchen Collection</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {kitchenProducts.map((product, index) => (
+        <ProductCard key={index} {...product} />
+      ))}
+    </div>
+  </div>
+</section>  
+          
       </main>
 
       <Footer />
