@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { ShoppingCart, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ProductCard from "@/components/ProductCard";
+
+
+import { livingRoomProducts, bedroomProducts, diningProducts, kitchenProducts } from "@/data/products";
 
 interface ProductState {
   name: string;
@@ -22,7 +26,7 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const { toast } = useToast();
-  
+
   const product = location.state as ProductState;
 
   if (!product) {
@@ -42,7 +46,7 @@ const ProductDetail = () => {
     );
   }
 
-  const priceNumeric = parseFloat(product.price.replace(/[$,]/g, ""));
+  const priceNumeric = parseFloat(product.price.replace(/[$,₦,]/g, ""));
 
   const handleAddToCart = () => {
     addToCart({
@@ -59,10 +63,23 @@ const ProductDetail = () => {
     });
   };
 
+  // ✅ Combine all products
+  const allProducts = [
+    ...livingRoomProducts,
+    ...bedroomProducts,
+    ...diningProducts,
+    ...kitchenProducts,
+  ];
+
+  // ✅ Find related products
+  const relatedProducts = allProducts.filter(
+    (p) => p.category === product.category && p.name !== product.name
+  );
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         <section className="section-padding">
           <div className="container mx-auto">
@@ -114,7 +131,7 @@ const ProductDetail = () => {
                       <li>• Easy assembly with included hardware</li>
                     </ul>
                   </div>
-                  
+
                   <div>
                     <h3 className="font-semibold mb-2">Material</h3>
                     <p className="text-muted-foreground">
@@ -140,6 +157,20 @@ const ProductDetail = () => {
                 </Button>
               </div>
             </div>
+
+            {/* ✅ Related Products Section */}
+            {relatedProducts.length > 0 && (
+              <div className="mt-12">
+                <h2 className="text-3xl font-playfair font-bold mb-6">
+                  Related Products
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedProducts.map((rp) => (
+                    <ProductCard key={rp.id} {...rp} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>

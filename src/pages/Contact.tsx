@@ -33,10 +33,10 @@ const Contact = () => {
 
     try {
       // Initialize EmailJS with your public key
-       emailjs.init("GUO9wYQBPsLaN3YP8");
+      emailjs.init("GUO9wYQBPsLaN3YP8");
 
       await emailjs.send(
-             "service_tdni8ic",
+        "service_tdni8ic",
         "template_dkmx4cr",
         {
           to_email: "admin@eleganceliving.com", // Replace with your admin email
@@ -56,7 +56,7 @@ const Contact = () => {
       // Reset form
       setFormData({
         name: "",
-         whatsapp: '',
+        whatsapp: '',
         email: "",
         subject: "",
         message: "",
@@ -105,19 +105,18 @@ const Contact = () => {
                       required
                       placeholder="Your name"
                     />
-                  <div className="space-y-2">
-                     <Label htmlFor="whatsapp">WhatsApp Number *</Label>
-                     <Input
-                      id="whatsapp"
-                      name="whatsapp"
-                      type="text"
-                      value={formData.whatsapp}
-                      onChange={handleChange}
-                       required
-                     placeholder="Your WhatsApp number"
-                   />
-                 </div>
-
+                    <div className="space-y-2">
+                      <Label htmlFor="whatsapp">WhatsApp Number *</Label>
+                      <Input
+                        id="whatsapp"
+                        name="whatsapp"
+                        type="text"
+                        value={formData.whatsapp}
+                        onChange={handleChange}
+                        required
+                        placeholder="Your WhatsApp number"
+                      />
+                    </div>
                   </div>
 
                   <div className="space-y-2">
